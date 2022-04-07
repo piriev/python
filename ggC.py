@@ -1,23 +1,21 @@
-#veg = ['помидор','огурец','капуста']
-#newVeg1 = input('Добавьте к списку первый овощ: ')
-#newVeg2 = input('Добавьте к списку второй овощ: ')
-#veg.append(newVeg1)
-#veg.append(newVeg2)
-#print(veg)
-
-jobList = ['купить продукты','поставить вещи в стирку']
-command = input('Введите команду: ')
-while command != 'выход':
-    if command == 'добавить':
-        jobList.append(input('Введите новую заметку: '))
-    elif command == 'удалить':
-        jobList.remove(input('Введите название заметки: '))
-    elif command == 'редактировать':
-        name = input('Введите название заметки: ')
-        index = jobList.index(name)
-        if name in jobList:
-            jobList[index] = input('Введите новое название: ')
-    elif command == 'список':
-        for elem in jobList:
-            print(elem)
-    command = input('Введите команду: ')
+inventory = []
+print('Вы находитесь в замке. Открывая дверь, Вы заметили, что есть три двери. \nПервая дверь справа, вторая слева и третья, которая ведет в подвал.')
+door = input('Какую дверь выберите?\n')
+while (door != 'Первую') and (door != 'Вторую') and (door != 'Третью') and (door != 'Выход'):
+    door = input('Неверная команда! Повторите попытку: ')
+if door == 'Первую':
+    print('Рядом с дверью Вы видите канделябр с зажженным факелом. \nВозьмете его?')
+    torch = input()
+    while (torch != 'Да') and (torch != 'Нет'):
+        torch = input('Неверная команда! Повторите попытку:')
+    if torch == 'Да':
+        inventory.append('Факел')
+        print('(в инвентарь добавлен факел)')
+    print('Зайдя внутрь, Вы заметили, что впереди длинный темный тоннель.')
+    if 'Факел' in inventory:
+        do1 = input('Использовать факел? ')
+        if do1 == 'Да':
+            inventory.remove('Факел')
+            print('Вы осветили себе путь')
+        
+    
