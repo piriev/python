@@ -27,7 +27,8 @@ while '*' in word:
             word.insert(5,'n')
     elif letter == 'Показать слово':
         for elem in word:
-            print(elem)
+            print(elem,end='')
+        print()
     else:
         print('\nНеверная буква! Попробуйте еще раз.')
-print('Правильно! Вы победили!')
+print('Правильно! Вы победили! Слово - python')
