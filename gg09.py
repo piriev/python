@@ -1,4 +1,4 @@
-pole =  [['*','*','*','*','*','*','*','*','*','*'],
+pole =  [['O','*','*','*','*','*','*','*','*','*'],
          ['*','*','*','*','*','*','*','*','*','*'],
          ['*','*','*','*','*','*','*','*','*','*'],
          ['*','*','*','*','*','*','*','*','*','*'],
@@ -12,16 +12,19 @@ for stroka in pole:
     for kletka in stroka:
         print(kletka,'',end='')
     print()
+placeA = 1
+placeB = 1
 while True:
-    placeByUser = int(input('Введите местоположение: '))
-    if placeByUser <= 100:
-        placeByO = placeByUser - 1
-        pole() = 'O'
-        for stroka in pole:
-            for kletka in stroka:
-                print(kletka,'',end='')
-            print()
-    else:
-        print('Неверное поле')
+    pole[placeB - 1][placeA - 1] = '*'
+    placeA = int(input('Введите номер стобца: '))
+    placeB = int(input('Введите номер строки: '))
+    while placeA > 10 or placeB > 10:
+       placeA = int(input('Неверный номер столбца, повторите попытку: '))
+       placeB = int(input('Неверный номер строки, повторите попытку: '))
+    pole[placeB - 1][placeA - 1] = 'O'
+    for stroka in pole:
+        for kletka in stroka:
+            print(kletka,'',end='')
+        print()
         
 
